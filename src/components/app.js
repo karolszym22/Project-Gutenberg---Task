@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
-
+import FilterContainer from './FilteringForm/filterContainer'
 
 
 function PaginatedItems({ itemsPerPage }) {
@@ -43,6 +42,7 @@ const handlePageClick = async (numberPage) => {
   
     return (
       <div>
+        <FilterContainer></FilterContainer>
         {items.map((item) => {
                return <div key={item.id}>{item.title}</div>
         })}
