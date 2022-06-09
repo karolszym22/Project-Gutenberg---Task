@@ -7,9 +7,8 @@ function PaginatedItems({ itemsPerPage }) {
 
   
 const [items, setItems] = useState([]);
-const [numberPage, setCurrentPage] = useState(0);
 const [numberBooks, setNumberBooks] = useState(0)
-let array = [];
+
 useEffect(()=>{
   const fetchBooks = async () => {
     const res = await fetch (`https://gnikdroy.pythonanywhere.com/api/book/?agent_alias_contains=&agent_birth_date_range_max=&agent_birth_date_range_min=&agent_death_date_range_max=&agent_death_date_range_min=&agent_name_contains=&agent_webpage_contains=&description_contains=&downloads_range_max=&downloads_range_min=&has_agent_type=&has_bookshelf=&has_resource_type=&languages=&title_contains=&type=`)
@@ -42,7 +41,7 @@ const handlePageClick = async (numberPage) => {
   
     return (
       <div>
-        <FilterContainer></FilterContainer>
+        <FilterContainer>sfsdfsdfsdfsd</FilterContainer>
         {items.map((item) => {
                return <div key={item.id}>{item.title}</div>
         })}
