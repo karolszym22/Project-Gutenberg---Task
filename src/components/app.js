@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import styled from 'styled-components'
 import FilterContainer from './FilteringForm/filterContainer'
 
+
+const BooksContainer = styled.div `
+width: 100% ;
+height: 100vh;
+`
 
 function PaginatedItems({ itemsPerPage }) {
 
@@ -40,7 +46,7 @@ const handlePageClick = async (numberPage) => {
 }
   
     return (
-      <div>
+      <BooksContainer>
         <FilterContainer>sfsdfsdfsdfsd</FilterContainer>
         {items.map((item) => {
                return <div key={item.id}>{item.title}</div>
@@ -67,7 +73,7 @@ const handlePageClick = async (numberPage) => {
         />
         
      
-      </div>
+      </BooksContainer>
     );
   
   
