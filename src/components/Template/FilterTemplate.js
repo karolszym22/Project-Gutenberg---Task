@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import styled from 'styled-components'
 import FilterContainer from '../FilteringForm/filterContainer';
-import { setGlobalState, useGlobalState } from "../../GlobalState/globalState";
+import { useGlobalState } from "../../GlobalState/globalState";
 
 
 
@@ -35,7 +35,7 @@ useEffect(()=>{
 }, [])
 
 
-const fetchAnotherBooks = async (currentPage) => {
+const getAnotherPage = async (currentPage) => {
   const res = await fetch (`https://gnikdroy.pythonanywhere.com/api/book/?agent_alias_contains=&agent_birth_date_range_max=&agent_birth_date_range_min=&agent_death_date_range_max=&agent_death_date_range_min=&agent_name_contains=&agent_webpage_contains=&description_contains=&downloads_range_max=&downloads_range_min=&has_agent_type=&has_bookshelf=&has_resource_type=&languages=&page=${currentPage}&title_contains=&type=`)
   const data = await res.json();
   console.log("druga data", data)
@@ -49,7 +49,7 @@ const fetchAnotherBooks = async (currentPage) => {
 
 const handlePageClick = async (numberPage) => {
   const currentPage = numberPage.selected + 1
-  const data = await fetchAnotherBooks(currentPage)
+  const data = await getAnotherPage  (currentPage)
   setItems(data.results)
 }
   
