@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from 'styled-components'
 import TextInput from './FilteringInput/textInput';
 import FilterSubmit from "./FilteringButton/filterButton";
+
+
 const ContainerTitle = styled.h1`
 padding: 10px;
 `
@@ -15,6 +17,8 @@ const Container = styled.div`
 
 const FilterContainer = () =>
 {
+    
+
     const [type, setType] = useState("title");
     const [title, setTitle] = useState("asdasda");
     const [description, setDescription] = useState("asdasda");

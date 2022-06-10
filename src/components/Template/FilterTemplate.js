@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import styled from 'styled-components'
 import FilterContainer from '../FilteringForm/filterContainer';
-
+import { setGlobalState, useGlobalState } from "../../GlobalState/globalState";
 
 
 
@@ -18,8 +18,10 @@ a {
 function FilterTemplate() {
 
   
-const [items, setItems] = useState([]);
-const [numberBooks, setNumberBooks] = useState(0)
+const [items, setItems] = useGlobalState('items');
+const [numberBooks, setNumberBooks] = useGlobalState('numberBooks');
+const [favoriteBooks, setFavoriteBooks] = useGlobalState('favoriteBooks');
+
 
 useEffect(()=>{
   const fetchBooks = async () => {

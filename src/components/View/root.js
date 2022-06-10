@@ -4,7 +4,9 @@ import App from '../app'
 const Root = () =>
 {
    return(
-     <App></App>
+     <App>
+        
+     </App>
   )
 
 }
